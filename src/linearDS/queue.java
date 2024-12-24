@@ -22,9 +22,6 @@ public class queue {
             System.out.println("Queue is Full");
             return;
         }
-//        if (rear == size - 1) {
-//            rear = -1;
-//        }
         data[++rear] = item;
         currPosition++;
 
