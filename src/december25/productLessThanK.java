@@ -18,7 +18,6 @@ public class productLessThanK {
                     low++;
                 }
 
-                // All subarrays ending at 'right' and starting from 'left' to 'right' are valid
                 count += (i - low + 1);
             }
 
