@@ -10,10 +10,8 @@ public class MiddleOFTheLinkedList {
         }
 
     }
-    //make a head node which is  basically work as a  pointer
     Node head;
 
-    //create a function insertFirst so we can add new node to the list
     void insertFirst(int value){
         Node newNode =new Node(value);
         if(head==null){
