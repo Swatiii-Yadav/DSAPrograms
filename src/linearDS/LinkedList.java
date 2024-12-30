@@ -1,53 +1,90 @@
 package linearDS;
 
 public class LinkedList {
-    static Node head;
-    public static class Node{
+    //create a Node class
+    class Node {
         int data;
         Node next;
-        Node(int value){
-            this.data=value;
+
+        Node(int data) {
+            this.data = data;
             this.next=null;
         }
     }
-    public static   void insertValueIntoNode(int value){
-        Node newNode=new Node(value);
-        if(head==null){
-            head=newNode;
+    Node head;
+    public void insertFirst(int data){
+Node node=new Node(data);
+if(head==null){
+    head=node;
+    return;
+}
+node.next=head;
+head=node;
+    }
+    public void insertFromLast(int data){
+        Node node =new Node(data);
+        if (head==null){
+            head=node;
             return;
         }
-        newNode.next=head;
-        head=newNode;
-    }
-    public static void deleteNode(){
-
-        if (head==null){
-            System.out.println("List is Empty");
-        }
-
-        head=head.next;
-    }
-    public static void  printList(){
         Node temp=head;
-        while(temp!=null){
-            System.out.print(temp.data+" --> ");
+        while (temp.next!=null){
             temp=temp.next;
         }
-        System.out.println();
+        temp.next=node;
+
     }
 
+    public  Node deleteFirst(){
+        if (head==null){
+            return null;
+        }
+        Node temp=head;
+        head=head.next;
+        return head;
+    }
+    public Node deleteLast(){
+        if (head==null){
+            return null;
+        }
+        if (head.next==null){
+            head=null;
+            return null;
+        }
+        Node temp=head;
+        while (temp.next!=null){
+            temp=temp.next;
+            temp.next=null;
+            }
+        return head;
+    }
+public void print(){
+        Node temp=head;
+        if (temp==null){
+            return;
+        }
+        while (temp!=null) {
+            System.out.print(temp.data+" ");
+
+            temp = temp.next;
+        }
+}
     public static void main(String[] args) {
         LinkedList list=new LinkedList();
-        list.insertValueIntoNode(5);
-        list.insertValueIntoNode(15);
-        list.insertValueIntoNode(25);
-        list.insertValueIntoNode(35);
+        list.insertFirst(5);
+        list.insertFirst(15);
+        list.insertFirst(25);
+        list.insertFirst(35);
+        list.insertFirst(45);
 
-        printList();
-        deleteNode();
-        printList();
+
+        list.insertFromLast(9);
+        list.insertFromLast(19);
+        list.insertFromLast(29);
+        list.insertFromLast(39);
+        list.insertFromLast(49);
+        list.print();
 
 
     }
-
 }
