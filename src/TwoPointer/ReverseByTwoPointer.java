@@ -1,4 +1,4 @@
-package Arrays;
+package TwoPointer;
 
 public class ReverseByTwoPointer {
     public static void reverse(int[] arr){
