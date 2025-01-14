@@ -7,8 +7,7 @@ public class longestPalindromeSubString {
             }
 
             int start = 0, end = 0;
-
-        for (int i = 0; i < s.length(); i++) {
+ for (int i = 0; i < s.length(); i++) {
                 int len1 = palindrome(s, i, i);
                 int len2 = palindrome(s, i, i + 1);
 
@@ -22,7 +21,7 @@ public class longestPalindromeSubString {
 
             return s.substring(start, end + 1);
         }
-        private static int palindrome(String s, int left, int right) {
+        public static int palindrome(String s, int left, int right) {
  while (left >= 0 && right < s.length() &&
                     s.charAt(left) == s.charAt(right)) {
                 left--;
