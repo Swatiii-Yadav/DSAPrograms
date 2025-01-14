@@ -10,12 +10,12 @@ public class longestPalindromeSubString {
         for (int i = 0; i < s.length(); i++) {
             for (int j = i; j < s.length(); j++) {
 
-                String substring = s.substring(i, j + 1);
+                String substrings = s.substring(i, j + 1);
 
 
-                if (isPalindrome(substring)) {
-                    if (substring.length() > blank.length()) {
-                        blank = substring;
+                if (isPalindrome(substrings)) {
+                    if (substrings.length() > blank.length()) {
+                        blank = substrings;
                     }
                 }
             }
