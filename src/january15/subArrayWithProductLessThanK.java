@@ -11,7 +11,7 @@ public class subArrayWithProductLessThanK {
                 product =product*   nums[i];
 
                 while (product >= k) {
-                    product /= nums[temp];
+                    product =product/ nums[temp];
                     temp++;
                 }
 
