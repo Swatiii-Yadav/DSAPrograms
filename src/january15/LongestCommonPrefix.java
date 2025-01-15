@@ -11,7 +11,8 @@ public class LongestCommonPrefix {
 
         for (int i = 1; i < str.length; i++) {
             String s = str[i];
-     while (prefixLen > s.length() || !result.equals(s.substring(0, prefixLen))) {
+     while (prefixLen > s.length() )
+         if(!result.equals(s.substring(0, prefixLen))) {
        prefixLen--;
                 if (prefixLen == 0) {
                     return "";
