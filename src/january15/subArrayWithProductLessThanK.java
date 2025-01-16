@@ -2,7 +2,7 @@ package january15;
 
 public class subArrayWithProductLessThanK {
 
-        public static int SubarrayProduct(int[] nums, int k) {
+        public static int findProduct(int[] nums, int k) {
             int product = 1;
             int count = 0;
             int temp = 0;
@@ -11,7 +11,7 @@ public class subArrayWithProductLessThanK {
                 product =product*   nums[i];
 
                 while (product >= k) {
-                    product /= nums[temp];
+                    product =product/ nums[temp];
                     temp++;
                 }
 
@@ -26,7 +26,7 @@ public class subArrayWithProductLessThanK {
             int[] nums = {10, 5, 2, 6};
             int k = 100;
 
-            System.out.println(SubarrayProduct(nums, k));
+            System.out.println(findProduct(nums, k));
         }
     }
 
