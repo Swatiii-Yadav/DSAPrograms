@@ -1,11 +1,11 @@
 package Patterns;
 
-public class Pyramid {
+public class printAlphbatesInPyramid {
     public static void main(String[] args) {
         int n=4;
         for (int i=0;i<n;i++){
-            for (char j=0;j<=i;j++){
-                System.out.print("*");
+            for (char j='A';j<='A'+i;j++){
+                System.out.print(j);
             }
             System.out.println();
         }
